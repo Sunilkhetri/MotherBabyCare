@@ -1,0 +1,63 @@
+.how-it-works-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 60px 20px;
+  background-color: #f8f9fa;
+}
+
+.how-it-works-container h2 {
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 50px;
+}
+
+.steps-wrapper {
+  display: flex;
+  flex-direction: row;
+  gap: 80px;
+  align-items: center;
+  justify-content: center;
+}
+
+.step-circle {
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  border: 12px solid #a8d5ba;
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+}
+
+.step-circle:hover {
+  transform: scale(1.05);
+}
+
+.step-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.step-icon {
+  color: #4a90e2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.step-text {
+  text-align: center;
+}
+
+.step-number {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #555;
+}

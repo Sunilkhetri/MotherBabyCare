@@ -1,0 +1,92 @@
+/* Container for the header section */
+.header-container {
+  position: relative;
+  background-image: url('src/assets/images/mothercare.jpg'); /* Ensure the correct path to your image */
+  background-size: cover; /* Ensure the image covers the entire container */
+  background-position: right center; /* Move the background image to the right */
+  height: 700px;
+  width: 100%;
+  background-repeat: no-repeat;
+  
+  display: flex;
+  justify-content: center; /* Center the content horizontally */
+  align-items: center; /* Center the content vertically */
+  overflow: hidden; /* Ensure no content spills outside */
+}
+
+/* Main container holding the content */
+.main-container {
+  position: relative;
+  top: 10%;
+  width: 70%; /* Adjust width to make sure it doesn't take too much space */
+  max-width: 1200px; /* Limit the max width */
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.3); /* Optional: Add background color for better readability */
+  border-radius: 10px; /* Rounded corners */
+  text-align: center; /* Center the text */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Flexbox container for content */
+.content-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Top content with the title and description */
+.top-content {
+  margin-bottom: 30px;
+}
+
+.top-content h1 {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.top-content p {
+  font-size: 1.2rem;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* Bottom content with buttons and additional paragraph */
+.bottom-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.button-container {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.find-caregiver, .join-caregiver {
+  padding: 10px 20px;
+  font-size: 1rem;
+  color: #fff;
+  background-color: #1E90FF;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.find-caregiver:hover, .join-caregiver:hover {
+  background-color: #005bb5;
+}
+
+.bottom-content p {
+  font-size: 1rem;
+  color: #666;
+  max-width: 600px;
+  line-height: 1.6;
+}

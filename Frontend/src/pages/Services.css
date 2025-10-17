@@ -1,0 +1,85 @@
+.services-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 50px 0;
+  background-color: #f8f9fa;
+}
+
+.services-container h2 {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 30px;
+}
+
+.services-content {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.service-card {
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 800px;
+  min-height: 250px;
+}
+
+.service-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 40px;
+  margin-bottom: 20px;
+}
+
+.service-header .icon {
+  font-size: 80px; /* Changed from 800px to reasonable size */
+  color: #4a90e2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100px; /* Fixed width for icon container */
+  height: 100px; /* Fixed height for icon container */
+  flex-shrink: 0; /* Prevent shrinking */
+}
+
+.service-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  flex: 1;
+}
+
+.service-info h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.service-info p {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.5;
+}
+
+.service-button {
+  background-color: #4a90e2;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  align-self: center;
+}
+
+.service-button:hover {
+  background-color: #357ab7;
+}

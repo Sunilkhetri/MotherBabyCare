@@ -1,0 +1,250 @@
+/* Navbar Animation Keyframes */
+@keyframes navbarEntrance {
+  0% {
+    height: 100vh;
+    background: linear-gradient(135deg, #2b91ff 0%, #1a6bb8 100%);
+  }
+  60% {
+    height: 100vh;
+    background: linear-gradient(135deg, #2b91ff 0%, #1a6bb8 100%);
+  }
+  100% {
+    height: var(--navbar-height, 180px);
+    background: #f5f5f5;
+  }
+}
+
+@keyframes contentFadeIn {
+  0%, 60% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes logoSpin {
+  0%, 60% {
+    transform: rotate(0deg) scale(2);
+    opacity: 0.3;
+  }
+  80% {
+    transform: rotate(360deg) scale(1.2);
+    opacity: 1;
+  }
+  100% {
+    transform: rotate(360deg) scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes brandTextSlide {
+  0%, 60% {
+    opacity: 0;
+    transform: translateX(-30px);
+    color: white;
+  }
+  80% {
+    opacity: 1;
+    transform: translateX(0);
+    color: white;
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+    color: #222;
+  }
+}
+
+/* Navbar Styles */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--navbar-height, 180px);
+  min-height: var(--navbar-height, 180px);
+  background: #f5f5f5;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.06);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  
+  /* Apply animation */
+  animation: navbarEntrance 2s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+}
+
+/* Add loading class to prevent animation replay */
+.navbar.loaded {
+  animation: none;
+}
+
+.container {
+  width: 100%;
+}
+
+.mainContainer {
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+  /* Animate content appearance with a faster duration */
+  animation: contentFadeIn 1.5s ease-out forwards;
+}
+
+.left {
+  display: flex;
+  align-items: center;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Animate logo */
+.brand svg {
+  animation: logoSpin 2s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+}
+
+/* Animate brand text */
+.brandText {
+  font-weight: 600;
+  font-size: 24px;
+  color: #222;
+  animation: brandTextSlide 2s ease-out forwards;
+}
+
+.right {
+  display: flex;
+  align-items: center;
+  gap: 90px;
+}
+
+.navLinks {
+  display: flex;
+  gap: 20px;
+}
+
+/* Stagger animation for nav links */
+.navLinks button {
+  background: none;
+  border: none;
+  color: #333;
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 6px 12px;
+  transition: color 0.3s;
+  
+  /* Initial state for animation */
+  opacity: 0;
+  transform: translateY(-20px);
+  animation: contentFadeIn 0.5s ease-out forwards;
+}
+
+/* Stagger delays for each button */
+.navLinks button:nth-child(1) { animation-delay: 1s; }
+.navLinks button:nth-child(2) { animation-delay: 1.1s; }
+.navLinks button:nth-child(3) { animation-delay: 1.2s; }
+.navLinks button:nth-child(4) { animation-delay: 1.3s; }
+.navLinks button:nth-child(5) { animation-delay: 1.4s; }
+
+.navLinks button:hover {
+  color: #2b91ff;
+  transform: translateY(-2px);
+}
+
+.actions {
+  display: flex;
+  gap: 10px;
+  
+  /* Animate action buttons */
+  opacity: 0;
+  transform: scale(0.8);
+  animation: actionButtonsAppear 0.5s ease-out 1.5s forwards;
+}
+
+@keyframes actionButtonsAppear {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.signup, .login {
+  background: #2b91ff;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  border-radius: 4px;
+  transition: all 0.3s;
+}
+
+.signup:hover, .login:hover {
+  background: #1a6bb8;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(43, 145, 255, 0.3);
+}
+
+/* Prevent animation on subsequent renders */
+
+.navbar.no-animation .mainContainer,
+.navbar.no-animation .brand svg,
+.navbar.no-animation .brandText,
+.navbar.no-animation .navLinks button,
+.navbar.no-animation .actions {
+  animation: none !important;
+  opacity: 1;
+  transform: none;
+}
+
+.navbar.no-animation {
+  animation: none; /* Disable animation on subsequent page navigations */
+}
+
+@media (max-width: 900px) {
+  .mainContainer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .navLinks {
+    display: none;
+  }
+
+  .actions {
+    margin-top: 10px;
+  }
+  
+  /* Simplify animation on mobile */
+   @keyframes navbarEntrance {
+    0% {
+      height: 100vh;
+      background: linear-gradient(135deg, #2b91ff 0%, #1a6bb8 100%);
+    }
+    70% {
+      height: 100vh;
+    }
+    100% {
+      height: auto;
+      background: #f5f5f5;
+    }
+  }
+}
